@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charest="utf-8">
+        <link rel="stylesheet" href="{{url_for('.static', filename='style.css')}}">
+        <title>Calendar</title>
+    </head>
+    <body>
+        <nav>
+            <div>
+                <img id="hamburger" src="/static/images/134216_menu_lines_hamburger_icon.png">
+            </div>
+            <h1>Calendar</h1>
+            <button>Today</button>
+            <div class="arrows">
+                <img class="arrow" src="/static/images/leftarrow.png">
+            </div>
+            <div class="arrows">
+                <img class="arrow" src="/static/images/rightarrow.png">
+            </div>
+            <div>{{month}} {{day}}, {{year}}</div>
+            <div id="pallet">color pallet</div>
+            <button>Day</button>
+            <div>account image</div>
+        </nav>
+        <main>
+            <div id="side-bar">
+                <div id="create-container">
+                    <button>Create</button>
+                </div>
+                <div id="cal2">
+                    <div id="cal2-controller">
+                        <div>July 20{{year}}</div>
+                        <img id="left-arrow" class="arrow" src="/static/images/leftarrow.png">
+                        <img class="arrow" src="/static/images/rightarrow.png">
+                    </div>
+                    <div id="cal2-container">
+                        <div>S</div>
+                        <div>M</div>
+                        <div>T</div>
+                        <div>W</div>
+                        <div>T</div>
+                        <div>F</div>
+                        <div>S</div>
+
+                        {% for row in calander_display %}
+                            {% for column in row %}
+                                <div>{{column}}</div>
+                            {% endfor %}
+                        {% endfor %}
+                        
+                    </div>
+                    </div>
+                </div>
+            
+            <div id="calendar-container">
+                <div>This is where we create the actual calander</div>
+            </div>
+        </main>
+    </body>
+</html>
